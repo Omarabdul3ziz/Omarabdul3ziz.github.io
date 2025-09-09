@@ -1,0 +1,142 @@
+%------------------------
+% Resume Template (filled for Omar Abdulaziz)
+% Author : Anubhav Singh (MIT License)
+% Adapted for Omar Abdulaziz
+%------------------------
+
+\documentclass[a4paper,20pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Omar Abdulaziz}} & Email: \href{mailto:omarabdul3ziz@gmail.com}{omarabdul3ziz@gmail.com}\\
+  \href{https://linkedin.com/in/omarabdul3ziz}{linkedin.com/in/omarabdul3ziz} & Mobile:~~~+20 1007141064 \\
+\end{tabular*}
+
+%-----------SUMMARY-----------------
+\section{Summary}
+Backend-focused Software Engineer with 5+ years of experience building scalable, high-performance systems using Golang, PostgreSQL, and Docker. Skilled in API design, distributed systems, and DevOps practices. Passionate about automation, clean code, and performance optimization.
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading{Codescalers}{Cairo, Egypt}
+      {Software Engineer (Full-time)}{2020 -- Present}
+      \resumeItemListStart
+        \resumeItem{PostgreSQL Optimization}{Refactored complex schemas and queries, cutting API response times by 400\%.}
+        \resumeItem{API Development}{Developed REST, GraphQL, and RPC APIs with advanced filtering, sorting, and pagination.}
+        \resumeItem{Scalable Systems}{Built high-concurrency indexers scraping data from 3000+ nodes for real-time APIs.}
+        \resumeItem{System Programming}{Developed Linux system-level tools in Golang (networking, init, file systems).}
+        \resumeItem{Monitoring}{Integrated Prometheus and Grafana; built health monitoring tools for reliability.}
+        \resumeItem{Frontend Integration}{Designed real-time dashboards with Svelte/Vue.js for distributed grid resources.}
+        \resumeItem{DevOps}{Maintained 20+ Docker images and CI/CD pipelines for TFGrid apps.}
+      \resumeItemListEnd
+
+    \resumeSubheading{Codescalers}{Cairo, Egypt}
+      {Software Engineer Intern}{2019}
+      \resumeItemListStart
+        \resumeItem{Automation Tools}{Implemented client tools for Jumpscale project to streamline distributed automation.}
+        \resumeItem{API/SPA Project}{Managed full cycle: unit testing, containerization, CI/CD—reduced deployment time.}
+        \resumeItem{Cloud-Native}{Gained expertise in cloud-native development.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeSubItem{ThirdEye, Smart Glasses for Blind (Graduation Project)}{Built a computer vision system with sound feedback for visually impaired users using Python, TensorFlow, and Raspberry Pi.}
+  \resumeSubItem{Gocker, Container Runtime in Golang}{Developed a Docker-like runtime with namespaces, cgroups, filesystems; extended Docker with VM image creation and a custom process manager.}
+  \resumeSubItem{BusyNux, Minimal Linux Distribution}{Built a Linux distribution from scratch using Busybox; learned boot processes and kernel compilation.}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Nile Higher Institute}{Mansoura, Egypt}
+      {BSc in Electronics and Communication Engineering}{Oct 2016 -- Jun 2021}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\section{Skills}
+	\resumeSubHeadingListStart
+	\resumeSubItem{Languages}{Golang, Python, SQL, TypeScript}
+	\resumeSubItem{Backend}{GraphQL, Microservices, REST, RPC}
+	\resumeSubItem{Databases}{PostgreSQL, Redis}
+	\resumeSubItem{DevOps}{CI/CD, Docker, Kubernetes, Linux}
+	\resumeSubItem{Frontend}{React (basic), Svelte, Vue.js}
+	\resumeSubHeadingListEnd
+
+\end{document}
+
