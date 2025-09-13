@@ -41,3 +41,5 @@ jobs:
           git add pdf/resume.pdf
           git commit -m "Add generated PDF" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
