@@ -6,7 +6,6 @@
 \usepackage{fancyhdr}
 \usepackage{tabularx}
 \usepackage[english]{babel}
-\usepackage{multicol}
 \usepackage{enumitem}
 
 \pagestyle{fancy}
@@ -39,20 +38,20 @@
 \newcommand{\resumeSubheading}[4]{
   \item[]
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+      \textbf{#1} & \textit{#2} \\
+      \multicolumn{2}{l}{\hspace{0.5em}\textit{\small #3} \hfill \textit{\small #4}} \\
+    \end{tabular*}\vspace{-10pt}
 }
 
-\newcommand{\resumeProject}[2]{
-  \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \emph{#2} \\
-    \end{tabular*}\vspace{-5pt}
+\newcommand{\resumeItem}[2][]{%
+  \if\relax\detokenize{#1}\relax
+    \item \small{#2}%
+  \else
+    \item[] \small{#2}\vspace{#1}%
+  \fi
 }
 
-\newcommand{\resumeItem}[1]{\item \small{#1}}
-\newcommand{\resumeListStart}{\begin{itemize}[leftmargin=0.15in,label=\textbullet]}
+\newcommand{\resumeListStart}[1][0.15in]{\begin{itemize}[leftmargin=#1,label=\textbullet]}
 \newcommand{\resumeListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
@@ -69,73 +68,103 @@
     \href{https://github.com/omarabdul3ziz}{\underline{github.com/omarabdul3ziz}}
 \end{center}
 
+
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeListStart
-
   \resumeSubheading
-    {Software Engineer}{Aug 2021 -- Present}
+    {Software Engineer}{Oct 2021 -- Present}
     {Codescalers}{Cairo, Egypt}
-    \resumeListStart
-      \resumeItem{\textbf{PostgreSQL Optimization}: Refactored schemas and queries, cutting API response times by 400\%.}
-      \resumeItem{\textbf{API Development}: Built REST, GraphQL, and RPC APIs with advanced filtering/sorting/pagination.}
-      \resumeItem{\textbf{Scalable Systems}: Developed high-concurrency indexers scraping data from 3000+ nodes.}
-      \resumeItem{\textbf{System Programming}: Wrote Linux system-level tools in Golang (networking, init, file systems).}
-      \resumeItem{\textbf{Monitoring}: Integrated Prometheus and Grafana; built health monitoring tools.}
-      \resumeItem{\textbf{Frontend Integration}: Designed dashboards with Svelte/Vue.js.}
-      \resumeItem{\textbf{DevOps}: Maintained 20+ Docker images and CI/CD pipelines.}
+    \resumeListStart[0.3in]
+      \resumeItem{\textbf{Kubernetes}: Developed custom CRDs and Ingress Controllers, extending cluster functionality for scalable workloads.}
+      \resumeItem{\textbf{API Development}: Delivered production-grade APIs (REST, GraphQL, RPC) strictly following OpenAPI/OpenRPC specifications, ensuring compatibility and maintainability.}
+      \resumeItem{\textbf{Database Optimization}: Restructured PostgreSQL schemas, added indexes, and optimized queries, reducing API response times from 30s to 3s (10x improvement).}
+      \resumeItem{\textbf{Concurrency}: Built distributed background indexers fetching and aggregating data from 3k+ nodes using Go generics and concurrency for high throughput.}
+      \resumeItem{\textbf{Pub/Sub Systems}: Implemented asynchronous processing pipeline with Redis event streams, enabling reliable event-driven communication.}
+      \resumeItem{\textbf{Frontend Integration}: Contributed to the dashboard (Svelte → Vue migration), integrating multiple APIs and external clients for a unified user experience.}
+      \resumeItem{\textbf{DevOps \& Docker}: Created 20+ Docker images for popular DApps, showcasing deployment on in-house infrastructure and improving developer adoption.}
+      \resumeItem{\textbf{Systems Programming}: Engineered low-level services leveraging Linux primitives (networking, filesystems) and extended a fetch-on-read filesystem with S3 storage wrapper.}
+      \resumeItem{\textbf{Security \& Networking}: Hardened servers with NFTables-based isolation, and implemented authentication flows using OAuth and cryptographic signature verification.}
+      \resumeItem{\textbf{Monitoring}: Built node monitoring services with automated health checks and caching, improving system reliability and observability.}
+      \resumeItem{\textbf{Tooling \& Automation}: Developed a code-generation tool for OpenRPC specs, accelerating development and reducing boilerplate by 40\%.}
+      \resumeItem{\textbf{Collaboration}: Participated in design discussions, reviewed PRs, and partnered with cross-functional teams to deliver scalable solutions and maintain quality standards.}
+      \resumeItem{\textbf{Testing}: Maintained unit and integration test suites, ensuring stability and coverage across services.}
     \resumeListEnd
+\resumeListEnd
 
+\resumeListStart
   \resumeSubheading
-    {Software Engineer Intern}{Jul 2019 -- Aug 2019}
+    {Intern Software Engineer}{Aug 2021 -- Oct}
     {Codescalers}{Cairo, Egypt}
-    \resumeListStart
-      \resumeItem{\textbf{Automation Tools}: Implemented client tools for Jumpscale to streamline automation.}
-      \resumeItem{\textbf{API/SPA Development}: Managed testing, containerization, CI/CD—reduced deployment time.}
+    \resumeListStart[0.3in]
+      \resumeItem{\textbf{Kubernetes}: Developed custom CRDs and Ingress Controllers, extending cluster functionality for scalable workloads.}
     \resumeListEnd
-
 \resumeListEnd
 
 %-----------EDUCATION-----------
 \section{Education}
 \resumeListStart
   \resumeSubheading
-    {Nile Academy}{2016 -- 2021}
-    {Bachelor of Electronics and Communication Engineering}{Mansoura, Egypt}
+    {Bachelor of Electronics and Communication Engineering}{2016 -- 2021}
+    {Nile Academy}{Mansoura, Egypt}
 \resumeListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
 \resumeListStart
+  \resumeSubheading
+    {busybox.sh}{Shell}{Minimal Linux-from-scratch distribution}{}
 
-  \resumeProject{Gocker}{Golang, namespaces, cgroups, runc, Docker}
-  \resumeListStart
-    \resumeItem{Developed a Docker-like runtime with namespaces, cgroups, filesystems.}
-    \resumeItem{Extended Docker with VM image creation and a custom process manager.}
-  \resumeListEnd
+  \resumeSubheading
+    {gocker.go}{Go}{Lightweight Docker clone using Linux primitives}{}
 
-  \resumeProject{BusyNux}{BusyBox, Linux, Operating System}
-  \resumeListStart
-    \resumeItem{Built a minimal Linux distribution from scratch using Busybox.}
-    \resumeItem{Learned boot processes and kernel compilation.}
-  \resumeListEnd
+  \resumeSubheading
+    {ugit.go}{Go}{Minimal Git clone with commits and history tracking}{}
 
-  \resumeProject{ThirdEye}{Machine Learning, Python, TensorFlow}
-  \resumeListStart
-    \resumeItem{Built a computer vision system with sound feedback for visually impaired users.}
-  \resumeListEnd
+  \resumeSubheading
+    {resper.go}{Python}{RESP protocol implementation (Redis wire protocol)}{}
 
+  \resumeSubheading
+    {bitcask.rs}{Rust}{Append-only key-value database based on Bitcask model}{}
+
+  \resumeSubheading
+    {process-manager.rs}{Rust}{Simple PID1 process manager for Linux}{}
+
+  \resumeSubheading
+    {tcp.c}{C}{TCP server built from scratch handling multiple connections}{}
+
+  \resumeSubheading
+    {souqnazarat}{TypeScript}{E-commerce web application}{}
+
+  \resumeSubheading
+    {roommates-finder}{TypeScript}{Platform to help users find compatible roommates}{}
+
+  \resumeSubheading
+    {irc-chat-rooms.ts}{TypeScript}{Disposable chat rooms application}{}
+
+  \resumeSubheading
+    {obsidian-toggl}{JavaScript}{Extended integration between Obsidian and Toggl for time tracking}{}
+
+  \resumeSubheading
+    {tmux-waka}{Shell}{Plugin integrating Tmux with WakaTime productivity tracking}{}
+
+  \resumeSubheading
+    {zos-pkg-manager.rs}{Rust}{Package manager for zos platform}{}
+
+  \resumeSubheading
+    {homelab}{Various}{Collection of self-hosted solutions and automation scripts}{}
 \resumeListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
 \resumeListStart
-    \resumeItem {\textbf{Languages}{: Golang, Python, JavaScript/Typescript, SQL (Postgres)}} \\
-    \resumeItem {\textbf{Backend}{: GraphQL, Microservices, REST, RPC}} \\
-    \resumeItem {\textbf{Databases}{: PostgreSQL, Redis} }\\
-    \resumeItem {\textbf{Frontend}{: React (basic), Svelte, Vue.js} }\\
-    \resumeItem {\textbf{Tools}{: CI/CD, Docker, Kubernetes, Linux}}
-
+    \resumeItem[-6pt] {\textbf{Programming Languages}{: Go, Rust, TypeScript, Shell, Python, C, SQL, Bash}} \\
+    \resumeItem[-6pt] {\textbf{Databases}{: PostgreSQL, Bitcask, Redis, MongoDB}} \\
+    \resumeItem[-6pt] {\textbf{Backend \& APIs}{: REST, GraphQL, RPC, Pub/Sub, gRPC}} \\
+    \resumeItem[-6pt] {\textbf{Frontend}{: Vue.js, Svelte}} \\
+    \resumeItem[-6pt] {\textbf{Cloud \& DevOps}{: Linux, Docker, Kubernetes, CI/CD, AWS}}
 \resumeListEnd
+
+
 
 \end{document}
